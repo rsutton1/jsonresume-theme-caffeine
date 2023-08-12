@@ -4,10 +4,16 @@
 
   {{#each resume.work}}
   <section class="item">
+    {{#if company}}
     {{> section-header name=this.company }}
+    {{/if}}
+    {{#if description}}
+      <p class="summary">{{description}}</p>
+    {{/if}}
 
+<div class="sec section-header">
     {{#if position}}
-      <h4>{{position}}</h4>
+      <h4 class="bold">{{position}}</h4>
     {{/if}}
 
     {{#if summary}}
@@ -21,6 +27,7 @@
         {{/each}}
       </ul>
     {{/if}}
+</div>
   </section>
   {{/each}}
 </div>
